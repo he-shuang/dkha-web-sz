@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>读卡器服务测试</title>
+</head>
+
+<body>
+    <h1 id="test">暂无信息</h1>
+    <script>
+        var dom = document.getElementById("test");
+        // 打开一个 web socket  这里端口号和上面监听的需一致
+        var ws = new WebSocket('ws://localhost:3001');
+
+        // Web Socket 已连接上
+        ws.onopen = function() {
+            dom.innerText = "读卡服务建立成功！";
+        }
+        ws.onerror = function(err) {
+                dom.innerText = "读卡服务建立失败：" + err;
+            }
+            // 这里接受服务器端发过来的消息
+        ws.onmessage = function(data) {
+            var res = JSON.parse(data.data);
+            dom.innerText = "当前卡号为：" + res.msg;
+        }
+        window.addEventListener('beforeunload', () => {
+            dom.innerText = "读卡服务已关闭！";
+            ws.close();
+        })
+    </script>
+</body>
+
+</html>

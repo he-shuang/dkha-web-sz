@@ -1,0 +1,766 @@
+// $select-background:#1881FF;
+// $table-border-color:#1881FF;
+// $input-color:#fff;
+// $color-green:rgba($color: $select-background, $alpha: 1);
+// $color-light-blue:rgba($color: $select-background, $alpha: 0.5);
+// $color-green-deep:rgba($color: $select-background, $alpha: 1);
+// $table-th-color:rgba($color: $select-background, $alpha: 0.3);
+// $border-shadow:0 1px 3px rgba(0, 0, 0, .3);
+// $date-time-bg:rgba($color: #111, $alpha: 0.9);
+.bg-shadow {
+    background: rgba(20, 30, 40, 0.8);
+    box-shadow: 0px 0px 55px rgba($color: $select-background, $alpha: 0.5) inset;
+    overflow: hidden;
+    border: 2px solid rgba($color: $select-background, $alpha: 0.5);
+}
+
+.bg-border-color {
+    // background: $select-background;
+    background: rgba($color: $select-background, $alpha: 0.95);
+    color: $input-color;
+    border-color: $table-border-color !important;
+}
+
+.layout-tags {
+    margin-bottom: 20px;
+    .el-button {
+        height: 34px;
+        line-height: 34px;
+        padding: 0 20px;
+        background: rgba($color: $color-light-blue, $alpha: 0.2);
+        border-color: rgba($color: $color-light-blue, $alpha: 0.2);
+        &.active {
+            background: $color-green-deep;
+            border-color: $color-green-deep;
+        }
+    }
+}
+
+body {
+    // background: rgba($color: #000000, $alpha: 0.8);
+    background-size: 100% 100%;
+    min-height: 100vh;
+    .aui-wrapper {
+        &::before {
+            background: url('../img/main-bg.jpg')left top no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            content: "";
+        }
+    }
+    .el-card {
+        background: transparent;
+        border-color: transparent;
+        background-color: transparent;
+        //background: rgba(16, 25, 58, 0.2);
+        // box-shadow: 0px 0px 55px rgba($color: $table-border-color, $alpha: 0.5) inset;
+        // border: 2px solid rgba($color: $table-border-color, $alpha: 0.5);
+        &.map-card {
+            position: relative;
+            .el-card__body {
+                padding: 0;
+            }
+            .box-card {
+                background: rgba(16, 25, 58, 0.5);
+                box-shadow: 0px 0px 55px rgba($color: $table-border-color, $alpha: 0.5) inset;
+                border: 2px solid rgba($color: $table-border-color, $alpha: 0.5);
+                .el-card__header {
+                    border-color: $table-th-color;
+                }
+            }
+        }
+    }
+    .aui-content .home-container {
+        height: calc(100vh - 70px - 42px - 40px)
+    }
+    .aui-sidebar__menu-icon {
+        color: #fff !important;
+    }
+    .aui-sidebar {
+        padding: 0 10px 10px;
+        top: 70px;
+        box-sizing: border-box;
+        background: transparent !important;
+        .aui-sidebar__inner {
+            .aui-sidebar__menu {
+                width: 220px;
+                min-height: calc(100vh - 90px);
+            }
+        }
+    }
+    .aui-sidebar--fold .aui-content--tabs>.el-tabs>.el-tabs__header {
+        left: 80px;
+    }
+    .aui-sidebar--fold .aui-sidebar .aui-sidebar__inner .aui-sidebar__menu {
+        width: 64px;
+    }
+    .aui-sidebar--fold .el-menu-item {
+        padding-left: 10px !important;
+    }
+    .aui-content,
+    .aui-content__wrapper {
+        min-height: calc(100vh - 70px);
+        background: transparent !important;
+        .aui-content--tabs-tools {
+            color: $input-color;
+        }
+    }
+    .aui-content {
+        .el-tabs {
+            .el-tabs__header {
+                background: transparent !important;
+            }
+        }
+    }
+    .aui-content>.el-tabs>.el-tabs__content>.el-tab-pane {
+        min-height: calc(100vh - 70px - 42px - 30px);
+    }
+    .aui-content>.el-tabs>.el-tabs__content>.el-tab-pane>.aui-card--fill>.el-card__body {
+        min-height: auto;
+    }
+    .aui-content>.el-tabs>.el-tabs__header>.el-tabs__nav-wrap>.el-tabs__nav-scroll>.el-tabs__nav>.el-tabs__item {
+        background: transparent;
+        box-shadow: 0px 0px 55px rgba($color: $select-background, $alpha: 0.3) inset;
+        color: #fff;
+        &.is-active,
+        &:hover {
+            background: rgba($color: $select-background, $alpha: 0.5);
+            color: #fff;
+        }
+    }
+    .aui-sidebar--fold .aui-sidebar__menu>li>.el-submenu__title {
+        padding-left: 10px !important;
+    }
+    .el-menu--collapse .el-submenu .el-menu {
+        @extend .bg-shadow;
+        color: #fff !important;
+    }
+    .aui-sidebar {
+        .aui-sidebar__inner {
+            .el-menu {
+                .el-submenu,
+                .el-menu-item {
+                    color: #fff;
+                    .el-submenu__title {
+                        color: #fff;
+                    }
+                    &.is-active,
+                    &:hover {
+                        color: $color-green-deep;
+                        .el-submenu__title {
+                            color: $color-green-deep;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .aui-wrapper {
+        padding-top: 70px;
+    }
+    .aui-content>.el-tabs>.el-tabs__header {
+        @extend .bg-shadow;
+        box-sizing: border-box;
+        right: 15px;
+        left: 245px;
+    }
+    .aui-content>.el-tabs>.el-tabs__header,
+    .aui-content--tabs-tools {
+        top: 70px;
+    }
+    .aui-content--tabs-tools {
+        right: 15px;
+    }
+    .aui-navbar {
+        left: 10px;
+        top: 10px;
+        right: 15px;
+        @extend.bg-shadow;
+    }
+    .aui-content--tabs-tools,
+    .aui-content__wrapper,
+    .aui-content>.el-tabs>.el-tabs__header,
+    .aui-sidebar .aui-sidebar__menu .el-menu,
+    .aui-sidebar .aui-sidebar__menu .el-submenu>.el-submenu__title:hover,
+    .aui-sidebar .aui-sidebar__inner .el-menu,
+    .aui-sidebar .aui-sidebar__inner .el-menu .el-menu-item:hover,
+    .aui-sidebar .aui-sidebar__inner .el-menu .is-active,
+    .aui-sidebar .aui-sidebar__inner .el-submenu,
+    .aui-sidebar .aui-sidebar__inner .el-submenu.is-opened,
+    .aui-sidebar {
+        background: transparent;
+    }
+    .aui-sidebar__menu {
+        @extend .bg-shadow
+    }
+    .el-input,
+    .el-input-number,
+    .el-textarea,
+    .el-date-range-picker {
+        .el-input__inner,
+        .el-textarea__inner {
+            text-align: left;
+            color: $input-color;
+            border-color: $color-light-blue !important;
+            background: rgba($color: $color-light-blue, $alpha: 0.2) !important;
+            &::-webkit-input-placeholder {
+                color: $input-color;
+            }
+        }
+        .el-input-number__decrease,
+        .el-input-number__increase {
+            background: transparent;
+            color: #fff;
+            border-color: $color-light-blue!important;
+        }
+        &.el-input-group--append {
+            .el-input__inner {
+                border-radius: 0!important;
+            }
+            .el-input-group__append {
+                border-color: $color-light-blue;
+                background: $color-light-blue;
+                color: $input-color;
+            }
+        }
+    }
+    .el-date-editor {
+        color: $input-color;
+        border-color: $color-light-blue !important;
+        background: rgba($color: $color-light-blue, $alpha: 0.2) !important;
+        .el-range-input {
+            color: $input-color;
+            border-color: transparent;
+            background: transparent;
+            &::-webkit-input-placeholder {
+                color: $input-color;
+            }
+        }
+        .el-range-separator {
+            color: $input-color;
+        }
+    }
+    .el-select__tags {
+        .el-tag.el-tag--info {
+            background: rgba($color: $select-background, $alpha: 0.5) !important;
+            color: $color-green !important;
+            border-color: transparent
+        }
+    }
+    .el-select-dropdown.is-multiple .el-select-dropdown__item.selected {
+        background: rgba($color: $select-background, $alpha: 0.5);
+        color: $color-green;
+    }
+    .el-select-dropdown.is-multiple .el-select-dropdown__item.selected.hover,
+    .el-select-dropdown__item.is-disabled:hover {
+        background: rgba($color: $select-background, $alpha: 0.5);
+        color: $color-green;
+    }
+    .el-cascader {
+        .el-cascader__tags {
+            .el-tag {
+                background: transparent;
+                color: $input-color;
+                border-color: $color-light-blue;
+            }
+        }
+    }
+    .el-select-dropdown,
+    .el-cascader__dropdown {
+        background: $date-time-bg;
+        border-color: $select-background;
+        box-shadow: $border-shadow;
+        .el-select-dropdown__empty,
+        .el-cascader-node {
+            color: $input-color;
+            &:not(.is-disabled):focus {
+                background: rgba($color: $select-background, $alpha: 0.5);
+            }
+            &.in-active-path {
+                color: $color-green;
+            }
+        }
+        .el-cascader-node:hover {
+            background: rgba($color: $select-background, $alpha: 0.5);
+            color: $color-green;
+        }
+        .in-active-path,
+        .is-active {
+            background: rgba($color: $select-background, $alpha: 0.5);
+            color: $color-green;
+            &.in-checked-path {
+                color: $color-green;
+            }
+            .el-radio {
+                &.is-checked {
+                    color: $color-green;
+                    .el-radio__inner {
+                        background: $color-green!important;
+                        border-color: $color-green!important;
+                    }
+                }
+                .el-radio__label {
+                    color: $color-green;
+                }
+            }
+        }
+        .el-select-dropdown__item {
+            color: $input-color;
+            &.hover {
+                background: rgba($color: $select-background, $alpha: 0.5);
+                color: $color-green;
+            }
+        }
+    }
+    .el-form {
+        .el-form-item {
+            &.block-item {
+                width: 100%;
+            }
+            .el-form-item__label {
+                color: $input-color;
+                border-radius: 4px 0 0 4px;
+                background: $color-green-deep;
+                text-align: center;
+                padding: 0;
+                vertical-align: top;
+                min-width: 80px;
+            }
+            .el-form-item__content {
+                color: $input-color;
+                .el-input-group__prepend {
+                    background: transparent;
+                    border-color: $color-green-deep;
+                    .el-select {
+                        .el-input__inner {
+                            background: $color-green-deep !important;
+                            border-color: $color-green-deep !important;
+                            border-radius: 4px 0 0 4px;
+                            color: $input-color;
+                        }
+                        .el-input__icon {
+                            color: $input-color;
+                        }
+                    }
+                }
+                .el-input__inner,
+                .el-textarea__inner {
+                    border-radius: 0 4px 4px 0;
+                }
+            }
+        }
+    }
+    .el-picker-panel {
+        border-color: rgba($color: $table-border-color, $alpha: 0.5);
+        box-shadow: $border-shadow;
+        background: transparent;
+        .el-picker-panel__sidebar {
+            @extend .bg-border-color;
+            border-color: rgba($color: $table-border-color, $alpha: 0.5) !important;
+            background: $date-time-bg;
+            .el-picker-panel__shortcut {
+                color: $input-color;
+                &:hover {
+                    color: $color-green;
+                }
+            }
+        }
+        .el-date-picker__header {
+            color: $input-color;
+            .el-picker-panel__icon-btn,
+            .el-date-picker__header-label {
+                color: inherit;
+            }
+        }
+        .el-picker-panel__body {
+            @extend .bg-border-color;
+            background: $date-time-bg;
+            .el-date-range-picker__time-header {
+                border-color: rgba($color: $table-border-color, $alpha: 0.5);
+                .el-time-panel {
+                    background: $date-time-bg;
+                    border-color: rgba($color: $table-border-color, $alpha: 0.5);
+                    // box-shadow: $border-shadow;
+                    .el-time-spinner__item {
+                        color: $input-color !important;
+                        &:hover {
+                            background: rgba($color: $select-background, $alpha: 0.5);
+                            color: $input-color;
+                        }
+                    }
+                }
+            }
+            .el-date-picker__time-header {
+                border-color: rgba($color: $table-border-color, $alpha: 0.5);
+            }
+            .el-date-range-picker__header {
+                .el-picker-panel__icon-btn {
+                    color: $input-color;
+                    &.is-disabled {
+                        color: #999;
+                    }
+                }
+            }
+            .el-picker-panel__content,
+            .el-time-panel__content {
+                border-color: rgba($color: $table-border-color, $alpha: 0.5) !important;
+                &::before,
+                &::after {
+                    border-color: rgba($color: $table-border-color, $alpha: 0.5) !important;
+                }
+                .el-time-spinner__list {
+                    &::before {
+                        height: 72px;
+                    }
+                }
+                .el-year-table,
+                .el-month-table {
+                    td {
+                        .cell {
+                            color: $input-color;
+                        }
+                        &.current {
+                            .cell {
+                                color: $color-green-deep;
+                            }
+                        }
+                    }
+                }
+            }
+            .el-date-table {
+                th {
+                    border-color: rgba($color: $table-border-color, $alpha: 0.5);
+                    color: $input-color;
+                }
+                td {
+                    &.in-range {
+                        div {
+                            background: rgba($color: $select-background, $alpha: 0.5);
+                        }
+                    }
+                    &.disabled {
+                        div {
+                            background: rgba($color: #dadada, $alpha: 0.5);
+                        }
+                    }
+                }
+            }
+            .el-time-panel__footer {
+                border-color: rgba($color: $table-border-color, $alpha: 0.5);
+                .cancel {
+                    color: $input-color;
+                }
+            }
+        }
+        .el-picker-panel__footer {
+            border-top-color: rgba($color: $table-border-color, $alpha: 0.5);
+            background: $date-time-bg;
+            .el-button--default {
+                background: $color-green-deep;
+                color: #fff;
+                border-color: $color-green-deep;
+            }
+        }
+    }
+    .el-table {
+        background: transparent;
+        border-color: $select-background;
+        &::before {
+            background: $table-border-color;
+        }
+        thead {
+            color: $input-color !important;
+            background: transparent!important;
+        }
+        tr {
+            background: transparent !important;
+            &:hover,
+            &.hover-row {
+                td {
+                    background: rgba($color: $table-th-color, $alpha: 0.1) !important;
+                    background-color: $color-light-blue;
+                }
+            }
+            td {
+                border-color: $table-border-color !important;
+                color: $input-color;
+            }
+            th {
+                background: $table-th-color !important;
+                color: $input-color !important;
+                border-color: $table-border-color;
+                &.is-leaf {
+                    border-color: $table-border-color;
+                }
+                &.is-hidden {
+                    background: transparent!important;
+                }
+            }
+        }
+        &.el-table--border::after {
+            background: $table-border-color;
+        }
+        .el-table__fixed-right::before,
+        .el-table__fixed::before {
+            background: $table-border-color;
+        }
+        .el-table__fixed-right-patch {
+            background: transparent;
+            border-color: $table-border-color;
+        }
+        .el-table__expand-icon {
+            color: $input-color;
+        }
+        .el-table__empty-text {
+            color: $input-color;
+        }
+    }
+    .el-pagination {
+        button {
+            &:disabled {
+                background: transparent;
+            }
+            &.btn-next,
+            &.btn-prev {
+                background: transparent;
+                color: #fff;
+            }
+        }
+        .el-pagination__total,
+        .el-pagination__jump {
+            color: #fff;
+            .el-input {
+                .el-input__inner {
+                    text-align: center;
+                }
+            }
+        }
+        .el-pager {
+            li {
+                background: transparent;
+                color: #fff;
+                border-radius: 4px;
+                &.active {
+                    background: rgba($color: $color-light-blue, $alpha: 0.5);
+                }
+            }
+        }
+    }
+    .el-popper {
+        background: $date-time-bg;
+        border-color: rgba($color: $table-border-color, $alpha: 0.5);
+        &[x-placement^=top] {
+            .popper__arrow {
+                border-top-color: rgba($color: $table-border-color, $alpha: 0.5);
+                &::after {
+                    border-top-color: $date-time-bg;
+                }
+            }
+        }
+        &[x-placement^=bottom] {
+            .popper__arrow {
+                border-bottom-color: rgba($color: $table-border-color, $alpha: 0.5);
+                &::after {
+                    border-bottom-color: $date-time-bg;
+                }
+            }
+        }
+    }
+    .el-tree {
+        background: transparent;
+        color: $input-color;
+        .el-tree-node {
+            &:focus {
+                .el-tree-node__content {
+                    background: transparent;
+                }
+            }
+            .el-tree-node__content {
+                &:hover {
+                    background: rgba($color: $color-light-blue, $alpha: 0.5);
+                    color: $color-green;
+                }
+            }
+        }
+        &.el-tree--highlight-current {
+            .el-tree-node {
+                &.is-current {
+                    &>.el-tree-node__content {
+                        background: rgba($color: $color-light-blue, $alpha: 0.5);
+                    }
+                }
+            }
+        }
+    }
+    .el-checkbox {
+        color: $input-color;
+        .el-checkbox__input {
+            .el-checkbox__inner {
+                background: $color-light-blue;
+                border-color: $color-light-blue;
+            }
+            &.is-checked {
+                .el-checkbox__inner {
+                    background: $color-green-deep;
+                    border-color: $color-green-deep;
+                }
+            }
+        }
+    }
+    .el-radio {
+        color: $input-color;
+        margin-left: 10px;
+        &.is-checked {
+            color: $color-green;
+            .el-radio__inner {
+                background: $color-green!important;
+                border-color: $color-green!important;
+                &::after {
+                    background-color: $input-color!important;
+                }
+            }
+        }
+        .el-radio__label {
+            color: $color-green;
+        }
+    }
+    .el-message-box {
+        @extend .bg-shadow;
+        border-width: 1px;
+        .el-message-box__title {
+            color: $input-color;
+        }
+        .el-message-box__content {
+            color: $input-color;
+        }
+    }
+    .el-dropdown-menu {
+        @extend .bg-shadow;
+        border-width: 1px;
+        .el-dropdown-menu__item {
+            color: $input-color;
+        }
+    }
+    .dialogContainer {
+        .el-dialog__wrapper {
+            .el-dialog {
+                margin-top: 5vh !important;
+            }
+        }
+    }
+    .el-dialog {
+        @extend .bg-shadow;
+        .el-dialog__header {
+            text-align: center;
+            .el-dialog__title {
+                color: $color-green;
+                font-size: 18px;
+                font-weight: 700;
+            }
+            .el-dialog__headerbtn {
+                .el-dialog__close {
+                    color: $input-color;
+                }
+            }
+        }
+        .el-dialog__body {
+            .el-form {
+                .el-form-item {
+                    &.item-flex {
+                        display: flex;
+                        align-content: stretch;
+                        .el-form-item__label {
+                            flex-shrink: 0;
+                        }
+                        .el-form-item__content {
+                            flex: 1;
+                            margin-left: 0 !important;
+                        }
+                    }
+                    .el-form-item__label {
+                        color: $input-color;
+                    }
+                    .el-input,
+                    .el-textarea,
+                    .el-date-range-picker {
+                        .el-input__inner,
+                        .el-textarea__inner {
+                            color: $input-color;
+                            border-color: $color-light-blue !important;
+                            background: rgba($color: $color-light-blue, $alpha: 0.2) !important;
+                            &::-webkit-input-placeholder {
+                                color: $input-color;
+                            }
+                        }
+                        .el-input__count {
+                            background: transparent;
+                            color: #fff;
+                            .el-input__count-inner {
+                                background: transparent;
+                            }
+                        }
+                    }
+                    .el-input.is-disabled .el-input__inner {
+                        background-color: transparent !important;
+                        color: #C0C4CC;
+                        // border-color: transparent!important;
+                        cursor: not-allowed;
+                    }
+                    .el-date-editor,
+                    .el-date-range-picker {
+                        color: $input-color;
+                        border-color: $color-light-blue;
+                        background: rgba($color: $color-light-blue, $alpha: 0.2);
+                        .el-range-separator {
+                            color: $input-color;
+                        }
+                        .el-range-input {
+                            background: transparent;
+                            color: $input-color;
+                        }
+                        .el-input__inner {
+                            background: transparent !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .main-content-scrollbar {
+        background: transparent;
+        border-color: transparent;
+        background-color: transparent;
+        background: rgba(16, 25, 58, 0.5);
+        box-shadow: 0px 0px 55px rgba($color: $table-border-color, $alpha: 0.5) inset;
+        border: 2px solid rgba($color: $table-border-color, $alpha: 0.5);
+        height: calc(100vh - 70px - 42px - 30px);
+        .el-scrollbar__wrap {
+            overflow-x: hidden;
+        }
+        .el-tabs__item {
+            color: $input-color;
+            &.is-active {
+                color: $color-green-deep;
+            }
+        }
+    }
+    .el-upload {
+        .el-upload-dragger {
+            background: rgba($color: $select-background, $alpha: 0.2);
+            .el-upload__text {
+                color: $input-color;
+            }
+        }
+    }
+    .el-upload__tip {
+        color: $input-color;
+    }
+    .el-button--primary {
+        background: #409EFF;
+    }
+}
